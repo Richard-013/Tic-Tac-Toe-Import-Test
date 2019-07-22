@@ -8,7 +8,7 @@ std::string gameIntro()
     std::string name = "";
 
     std::cout << "Welcome to Tic-Tac-Toe, or Noughts and Crosses as some people may know it" << std::endl;
-    std::cout << "May I take your name before we get started?" << std::endl;
+    std::cout << "May I take your name before we get started?\n" << std::endl;
 
     std::getline(std::cin, name);
 
@@ -60,10 +60,15 @@ int impossibleGame()
 
 int main()
 {
+    clearScreen();
+
     std::string playerName = gameIntro();
     int difficulty = setDifficulty();
 
-    std::cout << "Name: " << playerName << "\nDiff: " << difficulty << std::endl;
+    std::cout << "Press Enter to Begin" << std::endl;
+    std::cin.ignore();
+    std::cin.ignore();
+    clearScreen();
 
     return 0;
 }
