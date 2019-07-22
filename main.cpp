@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
+enum difficulty{Easy = 1, Normal = 2, Impossible = 3};
 
 std::string gameIntro()
 {
