@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-enum difficulty{Easy = 1, Normal = 2, Impossible = 3};
+enum difficulty{Normal = 1, Impossible = 2};
 
 std::string gameIntro()
 {
@@ -21,20 +21,17 @@ int setDifficulty()
 {
     int choice = 0;
 
-    std::cout << "There are three difficulties to choose from, which would you like?" << std::endl;
-    std::cout << "1 - Easy\n2 - Normal\n3 - Impossible" << std::endl;
+    std::cout << "There are two difficulties to choose from, which would you like?" << std::endl;
+    std::cout << "1 - Normal\n2 - Impossible\n" << std::endl;
 
     std::cin >> choice;
 
     switch(choice)
     {
     case 1:
-        std::cout << "\nEasy difficulty has been selected" << std::endl;
-        break;
-    case 2:
         std::cout << "\nNormal difficulty has been selected" << std::endl;
         break;
-    case 3:
+    case 2:
         std::cout << "\nImpossible difficulty has been selected" << std::endl;
         break;
     default:
