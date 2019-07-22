@@ -43,6 +43,21 @@ int setDifficulty()
     return choice;
 }
 
+void clearScreen()
+{
+    std::cout << std::string(100, '\n');
+}
+
+int normalGame()
+{
+    return 0;
+}
+
+int impossibleGame()
+{
+    return 0;
+}
+
 int main()
 {
     std::string playerName = gameIntro();
