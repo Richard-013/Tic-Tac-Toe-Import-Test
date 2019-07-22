@@ -48,15 +48,8 @@ void clearScreen()
     std::cout << std::string(100, '\n');
 }
 
-int normalGame()
-{
-    return 0;
-}
-
-int impossibleGame()
-{
-    return 0;
-}
+int normalGame(std::string playerName);
+int impossibleGame(std::string playerName);
 
 int main()
 {
@@ -70,5 +63,28 @@ int main()
     std::cin.ignore();
     clearScreen();
 
+    if(difficulty == Impossible)
+    {
+        impossibleGame(playerName);
+    }
+    else
+    {
+        normalGame(playerName);
+    }
+
+    return 0;
+}
+
+int normalGame(std::string playerName)
+{
+    bool gameOver = false;
+    bool playerWin = false;
+    return 0;
+}
+
+int impossibleGame(std::string playerName)
+{
+    bool gameOver = false;
+    bool playerWin = false;
     return 0;
 }
