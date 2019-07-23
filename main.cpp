@@ -97,6 +97,7 @@ int normalGame(std::string playerName)
 {
     bool gameOver = false;
     bool playerWin = false;
+    bool validMove = false;
     return 0;
 }
 
@@ -104,5 +105,6 @@ int impossibleGame(std::string playerName)
 {
     bool gameOver = false;
     bool playerWin = false;
+    bool validMove = false;
     return 0;
 }
