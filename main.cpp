@@ -49,6 +49,21 @@ void clearScreen()
     std::cout << std::string(100, '\n');
 }
 
+void printGrid()
+{
+    int row = 0;
+    for(int i = 0; i < 3; i++)
+    {
+        std::cout << "    " << grid[i + (row * 2)] << " | " << grid[i + (row * 2) + 1] << " | " << grid[i + (row * 2) + 2] << std::endl;
+
+        if(row != 2)
+        {
+            std::cout << "   ---|---|---" << std::endl;
+            row++;
+        }
+    }
+}
+
 int normalGame(std::string playerName);
 int impossibleGame(std::string playerName);
 
@@ -63,6 +78,8 @@ int main()
     std::cin.ignore();
     std::cin.ignore();
     clearScreen();
+
+    printGrid();
 
     if(difficulty == Impossible)
     {
