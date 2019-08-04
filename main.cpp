@@ -4,72 +4,20 @@
 enum difficulty{Normal = 1, Impossible = 2};
 char grid[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
 
+bool checkWin(char symbol);
+
 int getInput();
 int checkChoice(int input);
-bool checkWin(char symbol);
+
+int setDifficulty();
 int normalGame(std::string playerName);
 int impossibleGame(std::string playerName);
+
+void clearScreen();
+void printGrid();
 void replaceSquare(char symbol, int input);
 
-std::string gameIntro()
-{
-    std::string name = "";
-
-    std::cout << "Welcome to Tic-Tac-Toe, or Noughts and Crosses as some people may know it" << std::endl;
-    std::cout << "May I take your name before we get started?\n" << std::endl;
-
-    std::getline(std::cin, name);
-
-    std::cout << "\nWelcome " << name << std::endl;
-
-    return name;
-}
-
-int setDifficulty()
-{
-    int choice = 0;
-
-    std::cout << "There are two difficulties to choose from, which would you like?" << std::endl;
-    std::cout << "1 - Normal\n2 - Impossible\n" << std::endl;
-
-    std::cin >> choice;
-
-    switch(choice)
-    {
-    case 1:
-        std::cout << "\nNormal difficulty has been selected" << std::endl;
-        break;
-    case 2:
-        std::cout << "\nImpossible difficulty has been selected" << std::endl;
-        break;
-    default:
-        std::cout << "\nInvalid option, defaulting to Normal difficulty" << std::endl;
-        choice = 2;
-        break;
-    }
-
-    return choice;
-}
-
-void clearScreen()
-{
-    std::cout << std::string(100, '\n');
-}
-
-void printGrid()
-{
-    int row = 0;
-    for(int i = 0; i < 3; i++)
-    {
-        std::cout << "    " << grid[i + (row * 2)] << " | " << grid[i + (row * 2) + 1] << " | " << grid[i + (row * 2) + 2] << std::endl;
-
-        if(row != 2)
-        {
-            std::cout << "   ---|---|---" << std::endl;
-            row++;
-        }
-    }
-}
+std::string gameIntro();
 
 int main()
 {
@@ -114,51 +62,6 @@ int main()
     }
     */
     return 0;
-}
-
-int getInput()
-{
-    std::string input = "";
-    char inputReal = ' ';
-    int output = -1;
-    char options[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
-
-    getline(std::cin, input);
-    inputReal = input[0];
-
-    for(int i = 0; i < 9; i++)
-    {
-        if(inputReal == options[i])
-        {
-            output = i;
-            break;
-        }
-    }
-
-    // Returns grid index of chosen square
-    return output;
-}
-
-int checkChoice(int input)
-{
-    if(input == -1)
-    {
-        // Tile outside of grid selected
-        return input;
-    }
-    if(grid[input] == 'X' || grid[input] == 'O')
-    {
-        // Tile on grid is already occupied
-        return -2;
-    }
-
-    // Tile selection is valid
-    return input;
-}
-
-void replaceSquare(char symbol, int input)
-{
-    grid[input] = symbol;
 }
 
 bool checkWin(char symbol)
@@ -212,6 +115,72 @@ bool checkWin(char symbol)
     return false;
 }
 
+int getInput()
+{
+    std::string input = "";
+    char inputReal = ' ';
+    int output = -1;
+    char options[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+
+    getline(std::cin, input);
+    inputReal = input[0];
+
+    for(int i = 0; i < 9; i++)
+    {
+        if(inputReal == options[i])
+        {
+            output = i;
+            break;
+        }
+    }
+
+    // Returns grid index of chosen square
+    return output;
+}
+
+int checkChoice(int input)
+{
+    if(input == -1)
+    {
+        // Tile outside of grid selected
+        return input;
+    }
+    if(grid[input] == 'X' || grid[input] == 'O')
+    {
+        // Tile on grid is already occupied
+        return -2;
+    }
+
+    // Tile selection is valid
+    return input;
+}
+
+int setDifficulty()
+{
+    int choice = 0;
+
+    std::cout << "There are two difficulties to choose from, which would you like?" << std::endl;
+    std::cout << "1 - Normal\n2 - Impossible\n" << std::endl;
+
+    std::cin >> choice;
+
+    switch(choice)
+    {
+    case 1:
+        std::cout << "\nNormal difficulty has been selected" << std::endl;
+        break;
+    case 2:
+        std::cout << "\nImpossible difficulty has been selected" << std::endl;
+        break;
+    default:
+        std::cout << "\nInvalid option, defaulting to Normal difficulty" << std::endl;
+        choice = 2;
+        break;
+    }
+
+    return choice;
+}
+
 int normalGame(std::string playerName)
 {
     bool gameOver = false;
@@ -226,4 +195,43 @@ int impossibleGame(std::string playerName)
     bool playerWin = false;
     bool validMove = false;
     return 0;
+}
+
+void clearScreen()
+{
+    std::cout << std::string(100, '\n');
+}
+
+void printGrid()
+{
+    int row = 0;
+    for(int i = 0; i < 3; i++)
+    {
+        std::cout << "    " << grid[i + (row * 2)] << " | " << grid[i + (row * 2) + 1] << " | " << grid[i + (row * 2) + 2] << std::endl;
+
+        if(row != 2)
+        {
+            std::cout << "   ---|---|---" << std::endl;
+            row++;
+        }
+    }
+}
+
+void replaceSquare(char symbol, int input)
+{
+    grid[input] = symbol;
+}
+
+std::string gameIntro()
+{
+    std::string name = "";
+
+    std::cout << "Welcome to Tic-Tac-Toe, or Noughts and Crosses as some people may know it" << std::endl;
+    std::cout << "May I take your name before we get started?\n" << std::endl;
+
+    std::getline(std::cin, name);
+
+    std::cout << "\nWelcome " << name << std::endl;
+
+    return name;
 }
