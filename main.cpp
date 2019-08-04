@@ -6,6 +6,8 @@ char grid[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
 
 bool checkWin(char symbol);
 
+char chooseSymbol();
+
 int getInput();
 int checkChoice(int input);
 
@@ -113,6 +115,27 @@ bool checkWin(char symbol)
 
     // No win condition found
     return false;
+}
+
+char chooseSymbol()
+{
+    std::string input = "";
+    char inputReal = ' ';
+    char symbol = ' ';
+    std::cout << "Please choose your symbol:\n    1 - O\n    2 - X" << std::endl;
+    getline(std::cin, input);
+    inputReal = input[0];
+
+    if(inputReal == '1')
+    {
+        symbol = 'O';
+    }
+    else
+    {
+        symbol = 'X';
+    }
+
+    return symbol;
 }
 
 int getInput()
