@@ -39,25 +39,6 @@ int main()
 
     printGrid();
 
-    int userInput = checkChoice(getInput());
-    if(userInput == -1)
-    {
-        std::cout << "Invalid grid position" << std::endl;
-    }
-    else if(userInput == -2)
-    {
-        std::cout << "Grid position already taken" << std::endl;
-    }
-    else
-    {
-        std::cout << "Valid selection of square: " << userInput + 1 << std::endl;
-    }
-
-    replaceSquare('X', userInput);
-
-    printGrid();
-
-    /*
     if(difficulty == Impossible)
     {
         impossibleGame(playerName);
@@ -66,7 +47,7 @@ int main()
     {
         normalGame(playerName);
     }
-    */
+
     return 0;
 }
 
@@ -212,7 +193,81 @@ int normalGame(std::string playerName)
 {
     bool gameOver = false;
     bool playerWin = false;
-    bool validMove = false;
+    bool aiWin = false;
+    char symbol = ' ';
+    char aiSymbol = ' ';
+    int moveCounter = 0;
+
+    symbol = chooseSymbol();
+    if(symbol == 'O')
+    {
+        aiSymbol = 'X';
+    }
+    else
+    {
+        aiSymbol = 'O';
+    }
+
+    do
+    {
+        clearScreen();
+        printGrid();
+        playerTurn(symbol);
+        moveCounter++;
+
+        if(checkWin(symbol))
+        {
+            playerWin = true;
+            gameOver = true;
+            break;
+        }
+        else if(moveCounter == 9)
+        {
+            gameOver = true;
+            break;
+        }
+
+        clearScreen();
+        printGrid();
+        normalAITurn(aiSymbol);
+        moveCounter++;
+
+        if(checkWin(aiSymbol))
+        {
+            aiWin = true;
+            gameOver = true;
+            break;
+        }
+        else if(moveCounter == 9)
+        {
+            gameOver = true;
+            break;
+        }
+
+    }while(gameOver != true);
+
+    if(playerWin == true)
+    {
+        // Player Wins
+        clearScreen();
+        printGrid();
+        std::cout << "\nYou Won! Congratulations!" << std::endl;
+    }
+    else if(aiWin == true)
+    {
+        // AI Wins
+        clearScreen();
+        printGrid();
+        std::cout << "\nYou Lost! Better Luck Next Time!" << std::endl;
+    }
+    else
+    {
+        // Draw
+        clearScreen();
+        printGrid();
+        std::cout << "\nIt's a Draw! Maybe Next Time You'll Do It!" << std::endl;
+    }
+
     return 0;
 }
 
@@ -220,7 +275,6 @@ int impossibleGame(std::string playerName)
 {
     bool gameOver = false;
     bool playerWin = false;
-    bool validMove = false;
     return 0;
 }
 
