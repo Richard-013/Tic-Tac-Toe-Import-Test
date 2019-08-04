@@ -5,7 +5,7 @@ enum difficulty{Normal = 1, Impossible = 2};
 char grid[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
 
 int getInput();
-int validChoice(int input);
+int checkChoice(int input);
 bool checkWin(char symbol);
 int normalGame(std::string playerName);
 int impossibleGame(std::string playerName);
@@ -134,7 +134,7 @@ int getInput()
     return output;
 }
 
-int validChoice(int input)
+int checkChoice(int input)
 {
     if(input == -1)
     {
