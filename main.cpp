@@ -9,6 +9,7 @@ int checkChoice(int input);
 bool checkWin(char symbol);
 int normalGame(std::string playerName);
 int impossibleGame(std::string playerName);
+void replaceSquare(char symbol, int input);
 
 std::string gameIntro()
 {
@@ -84,7 +85,7 @@ int main()
 
     printGrid();
 
-    int userInput = validChoice(getInput());
+    int userInput = checkChoice(getInput());
     if(userInput == -1)
     {
         std::cout << "Invalid grid position" << std::endl;
@@ -97,6 +98,10 @@ int main()
     {
         std::cout << "Valid selection of square: " << userInput + 1 << std::endl;
     }
+
+    replaceSquare('X', userInput);
+
+    printGrid();
 
     /*
     if(difficulty == Impossible)
@@ -139,7 +144,7 @@ int checkChoice(int input)
     if(input == -1)
     {
         // Tile outside of grid selected
-        return -1;
+        return input;
     }
     if(grid[input] == 'X' || grid[input] == 'O')
     {
@@ -149,6 +154,11 @@ int checkChoice(int input)
 
     // Tile selection is valid
     return input;
+}
+
+void replaceSquare(char symbol, int input)
+{
+    grid[input] = symbol;
 }
 
 bool checkWin(char symbol)
