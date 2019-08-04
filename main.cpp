@@ -5,7 +5,7 @@ enum difficulty{Normal = 1, Impossible = 2};
 char grid[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
 
 int getInput();
-bool validChoice(int input);
+int validChoice(int input);
 bool checkWin(char symbol);
 int normalGame(std::string playerName);
 int impossibleGame(std::string playerName);
@@ -98,7 +98,25 @@ int main()
 
 int getInput()
 {
-    // Gets input from the user
+    std::string input = "";
+    char inputReal = ' ';
+    int output = -1;
+    char options[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+
+    getline(std::cin, input);
+    inputReal = input[0];
+
+    for(int i = 0; i < 9; i++)
+    {
+        if(inputReal == options[i])
+        {
+            output = i;
+            break;
+        }
+    }
+
+    // Returns grid index of chosen square
+    return output;
 }
 
 bool validChoice(int input)
