@@ -84,6 +84,21 @@ int main()
 
     printGrid();
 
+    int userInput = validChoice(getInput());
+    if(userInput == -1)
+    {
+        std::cout << "Invalid grid position" << std::endl;
+    }
+    else if(userInput == -2)
+    {
+        std::cout << "Grid position already taken" << std::endl;
+    }
+    else
+    {
+        std::cout << "Valid selection of square: " << userInput + 1 << std::endl;
+    }
+
+    /*
     if(difficulty == Impossible)
     {
         impossibleGame(playerName);
@@ -92,7 +107,7 @@ int main()
     {
         normalGame(playerName);
     }
-
+    */
     return 0;
 }
 
