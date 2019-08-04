@@ -305,8 +305,29 @@ void replaceSquare(char symbol, int input)
 
 void playerTurn(char symbol)
 {
+    int userInput = -1;
 
+    do
+    {
+        std::cout << "\nPlease choose a square: ";
+        userInput = checkChoice(getInput());
+        if(userInput == -1)
+        {
+            std::cout << "Invalid grid position, please select a valid square" << std::endl;
+        }
+        else if(userInput == -2)
+        {
+            std::cout << "Grid position already taken, please select a different square" << std::endl;
+        }
+        else
+        {
+            std::cout << "Valid selection of square: " << userInput + 1 << std::endl;
+            replaceSquare(symbol, userInput);
+            break;
+        }
+    }while(true);
 }
+
 void normalAITurn(char symbol)
 {
 
