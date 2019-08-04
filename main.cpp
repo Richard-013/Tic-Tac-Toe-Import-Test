@@ -119,9 +119,21 @@ int getInput()
     return output;
 }
 
-bool validChoice(int input)
+int validChoice(int input)
 {
-    // Check if input is valid and grid space is available
+    if(input == -1)
+    {
+        // Tile outside of grid selected
+        return -1;
+    }
+    if(grid[input] == 'X' || grid[input] == 'O')
+    {
+        // Tile on grid is already occupied
+        return -2;
+    }
+
+    // Tile selection is valid
+    return input;
 }
 
 bool checkWin(char symbol)
