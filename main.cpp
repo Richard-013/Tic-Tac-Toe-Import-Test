@@ -19,6 +19,10 @@ void clearScreen();
 void printGrid();
 void replaceSquare(char symbol, int input);
 
+void playerTurn(char symbol);
+void normalAITurn(char symbol);
+void impossibleAITurn(char symbol);
+
 std::string gameIntro();
 
 int main()
@@ -243,6 +247,20 @@ void printGrid()
 void replaceSquare(char symbol, int input)
 {
     grid[input] = symbol;
+}
+
+void playerTurn(char symbol)
+{
+
+}
+void normalAITurn(char symbol)
+{
+
+}
+
+void impossibleAITurn(char symbol)
+{
+
 }
 
 std::string gameIntro()
