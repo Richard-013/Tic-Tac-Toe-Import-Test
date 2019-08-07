@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <stdlib.h>
+#include <time.h>
 
 enum difficulty{Normal = 1, Impossible = 2};
 char grid[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
@@ -38,6 +40,7 @@ int main()
     clearScreen();
 
     printGrid();
+    srand (time(NULL));
 
     if(difficulty == Impossible)
     {
@@ -330,7 +333,29 @@ void playerTurn(char symbol)
 
 void normalAITurn(char symbol)
 {
+    if(grid[4] == '5')
+    {
+        replaceSquare(symbol, 4);
+    }
+    else
+    {
+        bool invalid = true;
+        int num = 0;
+        char options[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
 
+        do
+        {
+            num = rand() % 9;
+            std::cout << num << "  " << checkChoice(num) << std::endl;
+            if(grid[num] == options[num] || checkChoice(num) != -2)
+            {
+                replaceSquare(symbol, num);
+                invalid = false;
+            }
+        } while(invalid);
+    }
+    // Else
+    // Replace random square
 }
 
 void impossibleAITurn(char symbol)
