@@ -110,7 +110,7 @@ char chooseSymbol()
     std::string input = "";
     char inputReal = ' ';
     char symbol = ' ';
-    std::cout << "Please choose your symbol:\n    1 - O\n    2 - X" << std::endl;
+    std::cout << "\nPlease choose your symbol:\n    1 - O\n    2 - X" << std::endl;
     getline(std::cin, input);
     inputReal = input[0];
 
@@ -171,7 +171,7 @@ int setDifficulty()
     int choice = 0;
 
     std::cout << "There are two difficulties to choose from, which would you like?" << std::endl;
-    std::cout << "1 - Normal\n2 - Impossible\n" << std::endl;
+    std::cout << "    1 - Normal\n    2 - Impossible\n" << std::endl;
 
     std::cin >> choice;
 
@@ -312,7 +312,8 @@ void playerTurn(char symbol)
 
     do
     {
-        std::cout << "\nPlease choose a square: ";
+        std::cout << "\nYou are " << symbol << std::endl;
+        std::cout << "Please choose a square: ";
         userInput = checkChoice(getInput());
         if(userInput == -1)
         {
