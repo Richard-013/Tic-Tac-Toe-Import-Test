@@ -355,8 +355,6 @@ void normalAITurn(char symbol)
             }
         } while(invalid);
     }
-    // Else
-    // Replace random square
 }
 
 void impossibleAITurn(char symbol)
