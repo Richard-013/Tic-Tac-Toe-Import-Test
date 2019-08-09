@@ -19,7 +19,7 @@ class Game
     private:
         bool checkWin(char symbol);
         void clearScreen();
-        std::string gameIntro();
+        void gameIntro();
 
         void round();
 
