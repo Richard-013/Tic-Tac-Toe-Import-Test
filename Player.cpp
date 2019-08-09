@@ -31,3 +31,31 @@ void Player::chooseSymbol()
 
     this->symbol = holderSymbol;
 }
+
+void Player::setName()
+{
+    std::string tempName = "";
+    int marker = 0;
+
+    do
+    {
+        if(marker != 0)
+        {
+            std::cout << "\n\nI'm sorry, I didn't quite catch that, what was your name?\n" << std::endl;
+            std::getline(std::cin, tempName);
+        }
+        else
+        {
+            std::getline(std::cin, tempName);
+            std::cout << tempName << std::endl;
+            marker++;
+        }
+    } while(tempName == "");
+
+    this->name = tempName;
+}
+
+std::string Player::getName()
+{
+    return this->name;
+}

@@ -9,6 +9,8 @@ class Player
     public:
         Player();
         char getSymbol();
+        void setName();
+        std::string getName();
 
     protected:
 
