@@ -61,7 +61,7 @@ void Grid::printGrid()
     int row = 0;
     for(int i = 0; i < 3; i++)
     {
-        std::cout << "    " << this->grid[i + (row * 2)] << " | " << this->grid[i + (row * 2) + 1] << " | " << this->grid[i + (row * 2) + 2] << std::endl;
+        std::cout << "    " << grid[i + (row * 2)] << " | " << grid[i + (row * 2) + 1] << " | " << grid[i + (row * 2) + 2] << std::endl;
 
         if(row != 2)
         {
@@ -80,7 +80,7 @@ int Grid::checkChoice(char symbol, int input)
         //return input;
     //}
 
-    if(this->grid[input] == 'X' || this->grid[input] == 'O')
+    if(grid[input] == 'X' || grid[input] == 'O')
     {
         // Tile on grid is already occupied
         return -2;
@@ -97,5 +97,5 @@ int Grid::checkChoice(char symbol, int input)
 
 void Grid::replaceSquare(char symbol, int input)
 {
-    this->grid[input] = symbol;
+    grid[input] = symbol;
 }

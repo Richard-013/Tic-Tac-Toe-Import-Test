@@ -9,6 +9,8 @@ class Player
     public:
         Player();
 
+        void playerTurn();
+
         char getSymbol();
 
         void setName();
@@ -18,7 +20,7 @@ class Player
         void chooseSymbol();
         int getInput();
 
-        void playerTurn(char symbol);
+
 
         std::string name = "";
         char symbol = ' ';

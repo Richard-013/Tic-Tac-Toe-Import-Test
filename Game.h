@@ -13,17 +13,16 @@ class Game
     public:
         Game();
         void runGame();
-        void gameLoop();
 
     private:
         void clearScreen();
 
         void gameIntro();
 
-        void round();
+        void gameLoop();
+        int round();
 
         bool checkWin(char symbol);
-        bool gameEnd();
         void gameWin();
         void gameDraw();
         void gameOver();

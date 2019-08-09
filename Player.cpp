@@ -29,7 +29,7 @@ void Player::chooseSymbol()
         }
     } while(true);
 
-    this->symbol = holderSymbol;
+    symbol = holderSymbol;
 }
 
 void Player::setName()
@@ -52,7 +52,7 @@ void Player::setName()
         }
     } while(tempName == "");
 
-    this->name = tempName;
+    name = tempName;
 }
 
 std::string Player::getName()

@@ -7,15 +7,18 @@ class AI
     public:
         AI();
 
+        void aiTurn();
+
+        char getSymbol();
+        void setSymbol(char playerSymbol);
+
     private:
         enum difficultyScale{Normal = 1, Impossible = 2};
 
         int setDifficulty();
-        void setSymbol(char playerSymbol);
 
-        void aiTurn(char symbol);
-        void normalAITurn(char symbol);
-        void impossibleAITurn(char symbol);
+        void normalAITurn();
+        void impossibleAITurn();
 
         int difficulty = 0;
         char symbol = ' ';
