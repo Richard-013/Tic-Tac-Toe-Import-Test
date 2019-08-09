@@ -5,6 +5,12 @@ Game::Game()
     //ctor
 }
 
+void Game::runGame()
+{
+    std::cout << checkWin('X') << std::endl;
+    this->gridObj.printGrid();
+}
+
 bool Game::checkWin(char symbol)
 {
     return this->gridObj.checkWin(symbol);
