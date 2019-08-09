@@ -13,21 +13,24 @@ class Game
     public:
         Game();
         void runGame();
+        void gameLoop();
 
     private:
-        bool checkWin(char symbol);
         void clearScreen();
+
         void gameIntro();
 
         void round();
 
-        bool checkGameOver();
+        bool checkWin(char symbol);
+        bool gameEnd();
         void gameWin();
         void gameDraw();
         void gameOver();
 
         int moveCounter = 0;
         bool gameEnd = false;
+
         Grid gridObj;
         Player playerObj;
         AI aiObj;

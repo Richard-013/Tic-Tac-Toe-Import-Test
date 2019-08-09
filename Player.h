@@ -8,13 +8,16 @@ class Player
 {
     public:
         Player();
+
         char getSymbol();
+
         void setName();
         std::string getName();
 
     private:
         void chooseSymbol();
         int getInput();
+
         void playerTurn(char symbol);
 
         std::string name = "";

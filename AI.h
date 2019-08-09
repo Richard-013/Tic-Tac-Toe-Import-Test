@@ -11,7 +11,8 @@ class AI
         enum difficultyScale{Normal = 1, Impossible = 2};
 
         int setDifficulty();
-        void setSymbol();
+        void setSymbol(char playerSymbol);
+
         void aiTurn(char symbol);
         void normalAITurn(char symbol);
         void impossibleAITurn(char symbol);
