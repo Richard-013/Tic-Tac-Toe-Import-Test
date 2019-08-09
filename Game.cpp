@@ -101,6 +101,7 @@ int Game::round()
 
 void Game::gameWin()
 {
+    // Runs when the player wins the match
     clearScreen();
     gridObj.printGrid();
     std::cout << "\nYou Won! Congratulations!" << std::endl;
@@ -108,6 +109,7 @@ void Game::gameWin()
 
 void Game::gameDraw()
 {
+    // Runs when the player draws the match
     clearScreen();
     gridObj.printGrid();
     std::cout << "\nIt's a Draw! Maybe Next Time You'll Do It!" << std::endl;
@@ -115,6 +117,7 @@ void Game::gameDraw()
 
 void Game::gameOver()
 {
+    // Runs when the player loses the match
     clearScreen();
     gridObj.printGrid();
     std::cout << "\nYou Lost! Better Luck Next Time!" << std::endl;
