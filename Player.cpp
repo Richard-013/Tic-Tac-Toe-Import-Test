@@ -32,6 +32,11 @@ void Player::chooseSymbol()
     symbol = holderSymbol;
 }
 
+char Player::getSymbol()
+{
+    return this->symbol;
+}
+
 void Player::setName()
 {
     std::string tempName = "";
