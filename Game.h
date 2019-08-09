@@ -2,6 +2,8 @@
 #define GAME_H
 
 #include <string>
+#include <iostream>
+
 #include "Grid.h"
 #include "Player.h"
 #include "AI.h"
@@ -10,6 +12,7 @@ class Game
 {
     public:
         Game();
+        void runGame();
 
     protected:
 
@@ -17,7 +20,9 @@ class Game
         bool checkWin(char symbol);
         void clearScreen();
         std::string gameIntro();
+
         void round();
+
         bool checkGameOver();
         void gameWin();
         void gameDraw();
