@@ -2,6 +2,7 @@
 #define PLAYER_H
 
 #include <string>
+#include <iostream>
 
 class Player
 {
@@ -12,7 +13,7 @@ class Player
     protected:
 
     private:
-        char chooseSymbol();
+        void chooseSymbol();
         int getInput();
         void playerTurn(char symbol);
 
