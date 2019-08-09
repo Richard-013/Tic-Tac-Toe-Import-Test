@@ -99,6 +99,26 @@ int Game::round()
     return 0;
 }
 
+void Game::gameWin()
+{
+    clearScreen();
+    gridObj.printGrid();
+    std::cout << "\nYou Won! Congratulations!" << std::endl;
+}
+
+void Game::gameDraw()
+{
+    clearScreen();
+    gridObj.printGrid();
+    std::cout << "\nIt's a Draw! Maybe Next Time You'll Do It!" << std::endl;
+}
+
+void Game::gameOver()
+{
+    clearScreen();
+    gridObj.printGrid();
+    std::cout << "\nYou Lost! Better Luck Next Time!" << std::endl;
+}
 
 
 
