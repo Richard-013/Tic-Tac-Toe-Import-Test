@@ -99,6 +99,12 @@ int Game::round()
     return 0;
 }
 
+bool Game::playAgain()
+{
+    // Checks if the player wishes to play again
+    return false;
+}
+
 void Game::gameWin()
 {
     // Runs when the player wins the match

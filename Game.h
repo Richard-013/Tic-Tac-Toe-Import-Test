@@ -27,6 +27,8 @@ class Game
         void gameDraw();
         void gameOver();
 
+        bool playAgain();
+
         int moveCounter = 0;
         bool gameEnd = false;
 
