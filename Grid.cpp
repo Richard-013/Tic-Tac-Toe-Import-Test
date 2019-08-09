@@ -70,3 +70,32 @@ void Grid::printGrid()
         }
     }
 }
+
+int Grid::checkChoice(char symbol, int input)
+{
+    // First statement will be moved to getInput function
+    //if(input == -1)
+    //{
+        // Tile outside of grid selected
+        //return input;
+    //}
+
+    if(this->grid[input] == 'X' || this->grid[input] == 'O')
+    {
+        // Tile on grid is already occupied
+        return -2;
+    }
+    else
+    {
+        // Selection is valid
+        replaceSquare(symbol, input);
+    }
+
+    // Tile selection is valid
+    return 0;
+}
+
+void Grid::replaceSquare(char symbol, int input)
+{
+    this->grid[input] = symbol;
+}
