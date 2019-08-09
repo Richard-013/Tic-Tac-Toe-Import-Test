@@ -55,3 +55,18 @@ bool Grid::checkWin(char symbol)
     // No win condition found
     return false;
 }
+
+void Grid::printGrid()
+{
+    int row = 0;
+    for(int i = 0; i < 3; i++)
+    {
+        std::cout << "    " << this->grid[i + (row * 2)] << " | " << this->grid[i + (row * 2) + 1] << " | " << this->grid[i + (row * 2) + 2] << std::endl;
+
+        if(row != 2)
+        {
+            std::cout << "   ---|---|---" << std::endl;
+            row++;
+        }
+    }
+}
