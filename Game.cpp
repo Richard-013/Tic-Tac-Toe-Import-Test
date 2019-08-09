@@ -61,6 +61,44 @@ void Game::gameLoop()
     }
 }
 
+int Game::round()
+{
+    clearScreen();
+    gridObj.printGrid();
+    playerObj.playerTurn();
+    moveCounter++;
+
+    if(checkWin(playerObj.getSymbol()))
+    {
+        // Player win
+        return 1;
+    }
+    else if(moveCounter == 9)
+    {
+        // Draw
+        return 2;
+    }
+
+    clearScreen();
+    gridObj.printGrid();
+    aiObj.aiTurn();
+    moveCounter++;
+
+    if(checkWin(aiObj.getSymbol()))
+    {
+        // AI Win
+        return 3;
+    }
+    else if(moveCounter == 9)
+    {
+        // Draw
+        return 2;
+    }
+
+    // Game continues
+    return 0;
+}
+
 
 
 
