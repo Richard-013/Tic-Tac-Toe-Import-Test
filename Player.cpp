@@ -87,3 +87,8 @@ int Player::getInput()
     // Returns grid index of chosen square
     return output;
 }
+
+void Player::playerTurn()
+{
+
+}

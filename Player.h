@@ -20,8 +20,6 @@ class Player
         void chooseSymbol();
         int getInput();
 
-
-
         std::string name = "";
         char symbol = ' ';
 };
