@@ -59,3 +59,26 @@ std::string Player::getName()
 {
     return this->name;
 }
+
+int Player::getInput()
+{
+    std::string input = "";
+    char inputReal = ' ';
+    int output = -1;
+    char options[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+
+    getline(std::cin, input);
+    inputReal = input[0];
+
+    for(int i = 0; i < 9; i++)
+    {
+        if(inputReal == options[i])
+        {
+            output = i;
+            break;
+        }
+    }
+
+    // Returns grid index of chosen square
+    return output;
+}
