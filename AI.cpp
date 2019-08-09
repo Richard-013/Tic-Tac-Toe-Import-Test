@@ -4,3 +4,9 @@ AI::AI()
 {
     //ctor
 }
+
+char AI::getSymbol()
+{
+    return this->symbol;
+}
+
