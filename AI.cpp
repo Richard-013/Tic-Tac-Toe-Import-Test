@@ -10,3 +10,7 @@ char AI::getSymbol()
     return this->symbol;
 }
 
+void AI::aiTurn()
+{
+
+}
