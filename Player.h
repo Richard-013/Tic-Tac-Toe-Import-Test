@@ -12,8 +12,6 @@ class Player
         void setName();
         std::string getName();
 
-    protected:
-
     private:
         void chooseSymbol();
         int getInput();

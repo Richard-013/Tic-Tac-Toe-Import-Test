@@ -14,8 +14,6 @@ class Game
         Game();
         void runGame();
 
-    protected:
-
     private:
         bool checkWin(char symbol);
         void clearScreen();

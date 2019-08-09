@@ -7,8 +7,6 @@ class AI
     public:
         AI();
 
-    protected:
-
     private:
         enum difficultyScale{Normal = 1, Impossible = 2};
 
