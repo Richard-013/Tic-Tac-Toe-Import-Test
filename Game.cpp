@@ -8,6 +8,8 @@ Game::Game()
 void Game::runGame()
 {
     // Starts the game and handles overall flow of events
+    aiObj.setTargetGrid(gridPtr);
+    playerObj.setTargetGrid(gridPtr);
     gameIntro();
     do
     {
