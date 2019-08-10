@@ -3,6 +3,8 @@
 AI::AI()
 {
     // Constructor
+    srand (time(NULL));
+}
 
 void AI::setTargetGrid(Grid *grid)
 {
@@ -25,6 +27,26 @@ void AI::aiTurn()
 void AI::normalAITurn()
 {
     // AI logic for normal difficulty
+    // Goes for the central square if it is available otherwise chooses a random square to fill
+    int temp = gridPtr->checkChoice(symbol, 4);
+
+    // If central square was taken then try random squares
+    if(temp != 0)
+    {
+        bool invalid = true;
+        int num = 0;
+
+        do
+        {
+            num = rand() % 9;
+            temp = gridPtr->checkChoice(symbol, num);
+            // If the choice is valid then break the loop
+            if(temp == 0)
+            {
+                invalid = false;
+            }
+        } while(invalid);
+    }
 }
 
 void AI::impossibleAITurn()
