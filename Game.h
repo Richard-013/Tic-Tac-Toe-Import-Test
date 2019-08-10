@@ -28,6 +28,7 @@ class Game
         void gameOver();
 
         bool playAgain();
+        void resetGame();
         void quitGame();
 
         int moveCounter = 0;

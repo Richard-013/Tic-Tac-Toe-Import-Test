@@ -131,6 +131,7 @@ bool Game::playAgain()
 
     if(inputReal == '1')
     {
+        resetGame();
         return true;
     }
 
