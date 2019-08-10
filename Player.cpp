@@ -2,19 +2,22 @@
 
 Player::Player()
 {
-    //ctor
+    // Constructor
 }
 
 void Player::chooseSymbol()
 {
+    // Allows the player to choose whether they are noughts or crosses
     std::string input = "";
     char inputReal = ' ';
     char holderSymbol = ' ';
 
     do
     {
+        // Loops until valid input is given
         std::cout << "\nPlease choose your symbol:\n    1 - O\n    2 - X" << std::endl;
         getline(std::cin, input);
+        // Takes the first character in the input as the player choice
         inputReal = input[0];
 
         if(inputReal == '1')
@@ -34,16 +37,19 @@ void Player::chooseSymbol()
 
 char Player::getSymbol()
 {
+    // Returns the symbol the player has chosen
     return this->symbol;
 }
 
 void Player::setName()
 {
+    // Allows the user to set their name
     std::string tempName = "";
     int marker = 0;
 
     do
     {
+        // Loops until the user gives a name instead of leaving the field empty
         if(marker != 0)
         {
             std::cout << "\n\nI'm sorry, I didn't quite catch that, what was your name?\n" << std::endl;
@@ -62,11 +68,13 @@ void Player::setName()
 
 std::string Player::getName()
 {
+    // Returns the player's chosen name
     return this->name;
 }
 
 int Player::getInput()
 {
+    // Gets input from the user to select a square on the grid
     std::string input = "";
     char inputReal = ' ';
     int output = -1;

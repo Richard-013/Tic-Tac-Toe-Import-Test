@@ -28,9 +28,9 @@ class Game
         void gameOver();
 
         bool playAgain();
+        void quitGame();
 
         int moveCounter = 0;
-        bool gameEnd = false;
 
         Grid gridObj;
         Player playerObj;

@@ -7,6 +7,7 @@ AI::AI()
 
 char AI::getSymbol()
 {
+    // Returns the symbol the AI player is using
     return this->symbol;
 }
 

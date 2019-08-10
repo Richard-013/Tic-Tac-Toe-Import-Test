@@ -2,20 +2,21 @@
 
 Grid::Grid()
 {
-    //ctor
-}
+    // Constructor
 
 bool Grid::checkWin(char symbol)
 {
-    // Checks outer lines
+    // Checks outer lines for three symbols in a row
     if(grid[0] == symbol)
     {
         if(grid[1] == symbol && grid[2] == symbol)
         {
+            // Top row
             return true;
         }
         else if(grid[3] == symbol && grid[6] == symbol)
         {
+            // Left column
             return true;
         }
     }
@@ -23,41 +24,48 @@ bool Grid::checkWin(char symbol)
     {
         if(grid[6] == symbol && grid[7] == symbol)
         {
+            // Bottom row
             return true;
         }
         else if(grid[2] == symbol && grid[5] == symbol)
         {
+            // Right column
             return true;
         }
     }
 
-    // Checks lines that pass the central square of the grid
+    // Checks lines that pass the central square of the grid for three symbols in a row
     if(grid[4] == symbol)
     {
         if(grid[3] == symbol && grid[5] == symbol)
         {
+            // Middle row
             return true;
         }
         else if(grid[1] == symbol && grid[7] == symbol)
         {
+            // Middle column
             return true;
         }
         else if(grid[0] == symbol && grid[8] == symbol)
         {
+            // Top left to bottom right diagonal
             return true;
         }
         else if(grid[2] == symbol && grid[6] == symbol)
         {
+            // Top right to bottom left diagonal
             return true;
         }
     }
 
-    // No win condition found
+    // No win condition met
     return false;
 }
 
 void Grid::printGrid()
 {
+    // Prints the grid with columns and rows divided
     int row = 0;
     for(int i = 0; i < 3; i++)
     {
@@ -97,5 +105,6 @@ int Grid::checkChoice(char symbol, int input)
 
 void Grid::replaceSquare(char symbol, int input)
 {
+    // Places the given symbol in the selected square on the grid
     grid[input] = symbol;
 }

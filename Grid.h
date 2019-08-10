@@ -8,6 +8,7 @@ class Grid
     public:
         Grid();
         bool checkWin(char symbol);
+        void resetGrid();
         void printGrid();
         int checkChoice(char symbol, int input);
 

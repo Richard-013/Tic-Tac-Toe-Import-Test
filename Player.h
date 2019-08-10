@@ -12,12 +12,12 @@ class Player
         void playerTurn();
 
         char getSymbol();
+        void chooseSymbol();
 
         void setName();
         std::string getName();
 
     private:
-        void chooseSymbol();
         int getInput();
 
         std::string name = "";
