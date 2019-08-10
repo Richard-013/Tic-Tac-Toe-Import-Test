@@ -82,17 +82,10 @@ void Grid::printGrid()
 
 int Grid::checkChoice(char symbol, int input)
 {
-    // First statement will be moved to getInput function
-    //if(input == -1)
-    //{
-        // Tile outside of grid selected
-        //return input;
-    //}
-
     if(grid[input] == 'X' || grid[input] == 'O')
     {
         // Tile on grid is already occupied
-        return -2;
+        return 1;
     }
     else
     {
