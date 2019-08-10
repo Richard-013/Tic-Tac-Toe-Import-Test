@@ -44,6 +44,8 @@ void Game::gameIntro()
 
     // Sets the player's chosen symbol
     playerObj.chooseSymbol();
+    aiObj.setSymbol(playerObj.getSymbol());
+    aiObj.setDifficulty();
 }
 
 void Game::gameLoop()
@@ -97,7 +99,7 @@ int Game::round()
         return 2;
     }
 
-    // Setup process repeats for the AI turn
+    // Set up process repeats for the AI turn
     clearScreen();
     gridObj.printGrid();
     aiObj.aiTurn();
