@@ -13,14 +13,14 @@ void Player::setTargetGrid(Grid *grid)
 void Player::chooseSymbol()
 {
     // Allows the player to choose whether they are noughts or crosses
-    std::string input = "";
+    std::string input = " ";
     char inputReal = ' ';
     char holderSymbol = ' ';
 
     do
     {
         // Loops until valid input is given
-        std::cout << "\nPlease choose your symbol:\n    1 - O\n    2 - X" << std::endl;
+        std::cout << "\nPlease choose your symbol:\n    1 - O\n    2 - X\n" << std::endl;
         getline(std::cin, input);
         // Takes the first character in the input as the player choice
         inputReal = input[0];
@@ -80,7 +80,7 @@ std::string Player::getName()
 int Player::getInput()
 {
     // Gets input from the user to select a square on the grid
-    std::string input = "";
+    std::string input = " ";
     char inputReal = ' ';
     int output = -1;
     char options[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
