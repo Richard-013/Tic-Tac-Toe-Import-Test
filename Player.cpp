@@ -5,6 +5,11 @@ Player::Player()
     // Constructor
 }
 
+void Player::setTargetGrid(Grid *grid)
+{
+    gridPtr = grid;
+}
+
 void Player::chooseSymbol()
 {
     // Allows the player to choose whether they are noughts or crosses

@@ -4,10 +4,13 @@
 #include <string>
 #include <iostream>
 
+#include "Grid.h"
+
 class Player
 {
     public:
         Player();
+        Player(Grid *grid);
 
         void playerTurn();
 
@@ -17,8 +20,12 @@ class Player
         void setName();
         std::string getName();
 
+        void setTargetGrid(Grid *grid);
+
     private:
         int getInput();
+
+        Grid *gridPtr;
 
         std::string name = "";
         char symbol = ' ';

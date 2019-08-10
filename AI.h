@@ -3,10 +3,13 @@
 
 #include <iostream>
 
+#include "Grid.h"
+
 class AI
 {
     public:
         AI();
+        AI(Grid *grid);
 
         void aiTurn();
 
@@ -15,11 +18,15 @@ class AI
 
         void setDifficulty();
 
+        void setTargetGrid(Grid *grid);
+
     private:
         enum difficultyScale{Normal = 1, Impossible = 2};
 
         void normalAITurn();
         void impossibleAITurn();
+
+        Grid *gridPtr;
 
         int difficulty = 0;
         char symbol = ' ';

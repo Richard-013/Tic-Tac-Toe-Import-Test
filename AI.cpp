@@ -3,6 +3,10 @@
 AI::AI()
 {
     // Constructor
+
+void AI::setTargetGrid(Grid *grid)
+{
+    gridPtr = grid;
 }
 
 void AI::aiTurn()
