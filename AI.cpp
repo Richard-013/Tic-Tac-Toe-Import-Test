@@ -34,6 +34,17 @@ char AI::getSymbol()
     return this->symbol;
 }
 
+void AI::setSymbol(char playerSymbol)
 {
+    // Sets the AI symbol to the opposite of the player's
+    if(playerSymbol == 'O')
+    {
+        symbol = 'X';
+    }
+    else
+    {
+        symbol = 'O';
+    }
+}
 
 }
