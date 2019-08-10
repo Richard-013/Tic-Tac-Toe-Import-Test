@@ -103,5 +103,31 @@ int Player::getInput()
 
 void Player::playerTurn()
 {
+    int userInput = -1;
 
+    do
+    {
+        std::cout << "\nYou are " << symbol << std::endl;
+        std::cout << "Please choose a square: ";
+        userInput = getInput();
+        if(userInput == -1)
+        {
+            std::cout << "Invalid grid position, please select a valid square" << std::endl;
+            continue;
+        }
+        else
+        {
+            int num = gridPtr->checkChoice(symbol, userInput);
+            if(num == 1)
+            {
+                std::cout << "Grid position already taken, please select a different square" << std::endl;
+                continue;
+            }
+            else
+            {
+                std::cout << "Valid selection of square: " << userInput + 1 << std::endl;
+                break;
+            }
+        }
+    }while(true);
 }
