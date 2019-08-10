@@ -52,13 +52,9 @@ void Game::gameLoop()
     int status = 0;
 
     // Loops through the game loop until one of the end conditions is met
-    while(true)
+    while(status == 0)
     {
         status = round();
-        if(status > 0)
-        {
-            break;
-        }
     }
 
     if(status == 1)
@@ -77,6 +73,9 @@ void Game::gameLoop()
         // No other code should be generated but if an unknown code is generated then it is treated as a player loss
         gameOver();
     }
+
+    std::cout << "\nPress enter to continue\n" << std::endl;
+    std::cin.ignore();
 }
 
 int Game::round()
