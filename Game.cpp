@@ -124,7 +124,7 @@ bool Game::playAgain()
 {
     // Checks if the player wishes to play again, return true if they do, else returns false
     clearScreen();
-    std::cout << "Would you like to play again?\n1 - Yes\n2 - No\n" << std::endl;
+    std::cout << "Would you like to play again?\n    1 - Yes\n    2 - No\n" << std::endl;
 
     std::string input = "";
     getline(std::cin, input);
