@@ -138,6 +138,15 @@ bool Game::playAgain()
     return false;
 }
 
+void Game::resetGame()
+{
+    gridObj.resetGrid();
+    moveCounter = 0;
+    playerObj.chooseSymbol();
+    aiObj.setSymbol(playerObj.getSymbol());
+    aiObj.setDifficulty();
+}
+
 void Game::gameWin()
 {
     // Runs when the player wins the match
