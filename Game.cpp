@@ -181,7 +181,6 @@ void Game::quitGame()
     std::cout << "\nThank you for playing " << playerObj.getName() << "!\n" << std::endl;
     std::cout << "Press enter to quit" << std::endl;
     std::cin.ignore();
-    std::cin.ignore();
 }
 
 
