@@ -159,6 +159,12 @@ void Game::gameOver()
     std::cout << "\nYou Lost! Better Luck Next Time!" << std::endl;
 }
 
-
+void Game::quitGame()
+{
+    clearScreen();
+    std::cout << "\nThank you for playing!\n" << std::endl;
+    std::cout << "Press enter to quit" << std::endl;
+    std::cin.ignore();
+}
 
 
