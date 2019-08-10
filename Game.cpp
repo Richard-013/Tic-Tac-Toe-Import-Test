@@ -119,6 +119,19 @@ int Game::round()
 bool Game::playAgain()
 {
     // Checks if the player wishes to play again, return true if they do, else returns false
+    clearScreen();
+    std::cout << "Would you like to play again?\n1 - Yes\n2 - No\n" << std::endl;
+
+    std::string input = "";
+    getline(std::cin, input);
+    // Takes the first character in the input as the player choice
+    char inputReal = input[0];
+
+    if(inputReal == '1')
+    {
+        return true;
+    }
+
     return false;
 }
 
