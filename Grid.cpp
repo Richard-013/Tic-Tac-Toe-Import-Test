@@ -3,6 +3,7 @@
 Grid::Grid()
 {
     // Constructor
+}
 
 bool Grid::checkWin(char symbol)
 {
