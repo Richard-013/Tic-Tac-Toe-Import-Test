@@ -3,7 +3,7 @@
 AI::AI()
 {
     // Constructor
-    srand (time(NULL));
+    srand (time(NULL)); // Seeds random number generation
 }
 
 void AI::setTargetGrid(Grid *grid)
