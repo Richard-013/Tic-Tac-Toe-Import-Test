@@ -8,10 +8,13 @@ Game::Game()
 void Game::runGame()
 {
     // Starts the game and handles overall flow of events
-    std::cout << checkWin('X') << std::endl;
-    gridObj.printGrid();
     gameIntro();
-    gameLoop();
+    do
+    {
+        gameLoop();
+    }while(playAgain());
+
+    quitGame();
 }
 
 bool Game::checkWin(char symbol)
