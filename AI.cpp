@@ -2,11 +2,12 @@
 
 AI::AI()
 {
-    //ctor
+    // Constructor
 }
 
 void AI::aiTurn()
 {
+    // Calls the correct AI move for the selected difficulty
     if(difficulty == Impossible)
     {
         impossibleAITurn();
@@ -19,12 +20,12 @@ void AI::aiTurn()
 
 void AI::normalAITurn()
 {
-
+    // AI logic for normal difficulty
 }
 
 void AI::impossibleAITurn()
 {
-
+    // AI logic for impossible difficulty
 }
 
 char AI::getSymbol()
@@ -33,7 +34,6 @@ char AI::getSymbol()
     return this->symbol;
 }
 
-void AI::aiTurn()
 {
 
 }
