@@ -54,20 +54,23 @@ void AI::setSymbol(char playerSymbol)
 void AI::setDifficulty()
 {
     // ALlows the player to choose the difficulty and sets values accordingly
-    int choice = 0;
+    std::string choice = " ";
+    char choiceReal = ' ';
 
-    std::cout << "There are two difficulties to choose from, which would you like?" << std::endl;
+    std::cout << "\nThere are two difficulties to choose from, which would you like?" << std::endl;
     std::cout << "    1 - Normal\n    2 - Impossible\n" << std::endl;
 
-    std::cin >> choice;
+    getline(std::cin, choice);
+    // Takes the first character in the input as the player choice
+    choiceReal = choice[0];
 
-    switch(choice)
+    switch(choiceReal)
     {
-    case 1:
+    case '1':
         difficulty = Normal;
         std::cout << "\nNormal difficulty has been selected" << std::endl;
         break;
-    case 2:
+    case '2':
         difficulty = Impossible;
         std::cout << "\nImpossible difficulty has been selected" << std::endl;
         break;
