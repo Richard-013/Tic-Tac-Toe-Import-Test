@@ -34,6 +34,7 @@ class Game
         int moveCounter = 0;
 
         Grid gridObj;
+        Grid *gridPtr = &gridObj;
         Player playerObj;
         AI aiObj;
 };
