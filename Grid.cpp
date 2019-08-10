@@ -109,3 +109,11 @@ void Grid::replaceSquare(char symbol, int input)
     // Places the given symbol in the selected square on the grid
     grid[input] = symbol;
 }
+
+void Grid::resetGrid()
+{
+    for(int i = 0; i < 9; i++)
+    {
+        grid[i] = blankGrid[i];
+    }
+}
