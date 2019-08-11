@@ -22,12 +22,11 @@ class AI
 
         void setTargetGrid(Grid *grid);
 
-        void impossibleAITurn();
     private:
         enum difficultyScale{Normal = 1, Impossible = 2};
 
         void normalAITurn();
-
+        void impossibleAITurn();
 
         // Moves for impossible difficulty AI to use
         int impMoveWin();
