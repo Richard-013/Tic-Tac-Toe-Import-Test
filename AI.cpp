@@ -108,6 +108,188 @@ void AI::setDifficulty()
 int AI::impMoveWin()
 {
     // Goes for a winning move if there is one available
+    // First checks if the central square is taken and if it is, checks if there are any resulting winning moves
+    if(gridPtr->viewSquare(4) == symbol)
+    {
+        int j = 8;
+        for(int i = 0; i < 9; i++)
+        {
+            if(i == 4)
+            {
+                j--;
+                continue;
+            }
+            else if(gridPtr->viewSquare(i) == symbol)
+            {
+                if(gridPtr->checkChoice(symbol, j) == 0)
+                {
+                    return 0;
+                }
+            }
+
+            j--;
+        }
+    }
+
+    // If the game cannot be won using a line that passes the central square, check the outside for a winning move
+    // Checks from the top left square
+    if(gridPtr->viewSquare(0) == symbol)
+    {
+        // Tries to take victory by completing the top row
+        if(gridPtr->viewSquare(1) == symbol)
+        {
+            if(gridPtr->checkChoice(symbol, 2) == 0)
+            {
+                return 0;
+            }
+        }
+        if(gridPtr->viewSquare(2) == symbol)
+        {
+            if(gridPtr->checkChoice(symbol, 1) == 0)
+            {
+                return 0;
+            }
+        }
+
+        // Tries to take victory by completing the left column
+        if(gridPtr->viewSquare(3) == symbol)
+        {
+            if(gridPtr->checkChoice(symbol, 6) == 0)
+            {
+                return 0;
+            }
+        }
+        if(gridPtr->viewSquare(6) == symbol)
+        {
+            if(gridPtr->checkChoice(symbol, 3) == 0)
+            {
+                return 0;
+            }
+        }
+
+        // Tries to take victory by completing a top-left to bottom-right diagonal
+        if(gridPtr->viewSquare(8) == symbol)
+        {
+            if(gridPtr->checkChoice(symbol, 4) == 0)
+            {
+                return 0;
+            }
+        }
+    }
+
+    // Checks from the top right square
+    if(gridPtr->viewSquare(2) == symbol)
+    {
+        // Checks top row in the case that square 0 is not taken by the AI
+        if(gridPtr->viewSquare(1) == symbol)
+        {
+            if(gridPtr->checkChoice(symbol, 0) == 0)
+            {
+                return 0;
+            }
+        }
+
+        // Tries to take victory by completing the right column
+        if(gridPtr->viewSquare(5) == symbol)
+        {
+            if(gridPtr->checkChoice(symbol, 8) == 0)
+            {
+                return 0;
+            }
+        }
+        if(gridPtr->viewSquare(8) == symbol)
+        {
+            if(gridPtr->checkChoice(symbol, 5) == 0)
+            {
+                return 0;
+            }
+        }
+
+        // Tries to take victory by completing a top-right to bottom-left diagonal
+        if(gridPtr->viewSquare(6) == symbol)
+        {
+            if(gridPtr->checkChoice(symbol, 4) == 0)
+            {
+                return 0;
+            }
+        }
+    }
+
+    // Checks from the bottom left square
+    if(gridPtr->viewSquare(6) == symbol)
+    {
+        // Checks left column in the case that square 0 is not taken by the AI
+        if(gridPtr->viewSquare(3) == symbol)
+        {
+            if(gridPtr->checkChoice(symbol, 0) == 0)
+            {
+                return 0;
+            }
+        }
+
+        // Tries to take victory by completing the bottom row
+        if(gridPtr->viewSquare(7) == symbol)
+        {
+            if(gridPtr->checkChoice(symbol, 8) == 0)
+            {
+                return 0;
+            }
+        }
+        if(gridPtr->viewSquare(8) == symbol)
+        {
+            if(gridPtr->checkChoice(symbol, 7) == 0)
+            {
+                return 0;
+            }
+        }
+    }
+
+    // Checks from the bottom right square
+    if(gridPtr->viewSquare(8) == symbol)
+    {
+        // Checks bottom row in the case that square 6 is not taken by the AI
+        if(gridPtr->viewSquare(7) == symbol)
+        {
+            if(gridPtr->checkChoice(symbol, 6) == 0)
+            {
+                return 0;
+            }
+        }
+
+        // Checks right column in the case that square 2 is not taken by the AI
+        if(gridPtr->viewSquare(5) == symbol)
+        {
+            if(gridPtr->checkChoice(symbol, 2) == 0)
+            {
+                return 0;
+            }
+        }
+    }
+
+    // Checks central row
+    if(gridPtr->viewSquare(3) == symbol)
+    {
+        if(gridPtr->viewSquare(5) == symbol)
+        {
+            if(gridPtr->checkChoice(symbol, 4) == 0)
+            {
+                return 0;
+            }
+        }
+    }
+
+    // Checks central column
+    if(gridPtr->viewSquare(1) == symbol)
+    {
+        if(gridPtr->viewSquare(7) == symbol)
+        {
+            if(gridPtr->checkChoice(symbol, 4) == 0)
+            {
+                return 0;
+            }
+        }
+    }
+
     return 1;
 }
 
