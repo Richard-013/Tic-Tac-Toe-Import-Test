@@ -132,7 +132,12 @@ int AI::impMoveBlockFork()
 int AI::impMoveCentral()
 {
     // Takes the central square if it available
-    return 1;
+    if(gridPtr->checkChoice(symbol, 4) == 1)
+    {
+        return 1;
+    }
+
+    return 0;
 }
 
 int AI::impMoveOppCorner()
@@ -144,12 +149,46 @@ int AI::impMoveOppCorner()
 int AI::impMoveCorner()
 {
     // Takes any available corner square
+    if(gridPtr->checkChoice(symbol, 0) == 0)
+    {
+        return 0;
+    }
+    else if(gridPtr->checkChoice(symbol, 2) == 0)
+    {
+        return 0;
+    }
+    else if(gridPtr->checkChoice(symbol, 6) == 0)
+    {
+        return 0;
+    }
+    else if(gridPtr->checkChoice(symbol, 8) == 0)
+    {
+        return 0;
+    }
+
     return 1;
 }
 
 int AI::impMoveSide()
 {
     // Takes any available side square
+    if(gridPtr->checkChoice(symbol, 1) == 0)
+    {
+        return 0;
+    }
+    else if(gridPtr->checkChoice(symbol, 3) == 0)
+    {
+        return 0;
+    }
+    else if(gridPtr->checkChoice(symbol, 5) == 0)
+    {
+        return 0;
+    }
+    else if(gridPtr->checkChoice(symbol, 7) == 0)
+    {
+        return 0;
+    }
+
     return 1;
 }
 
