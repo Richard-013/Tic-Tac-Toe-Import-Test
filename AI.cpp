@@ -102,3 +102,52 @@ void AI::setDifficulty()
         break;
     }
 }
+
+int impMoveWin()
+{
+    // Goes for a winning move if there is one available
+    return 1;
+}
+
+int impMoveBlock()
+{
+    // Blocks an opponents winning move
+    return 1;
+}
+
+int impMoveFork()
+{
+    // Creates a fork where there are two ways of winning
+    return 1;
+}
+
+int impMoveBlockFork()
+{
+    // Blocks an opponents chance to make a fork
+    return 1;
+}
+
+int impMoveCentral()
+{
+    // Takes the central square if it available
+    return 1;
+}
+
+int impMoveOppCorner()
+{
+    // Takes a corner opposite to one the opponent has already taken
+    return 1;
+}
+
+int impMoveCorner()
+{
+    // Takes any available corner square
+    return 1;
+}
+
+int impMoveSide()
+{
+    // Takes any available side square
+    return 1;
+}
+

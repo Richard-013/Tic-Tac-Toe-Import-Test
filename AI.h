@@ -28,6 +28,16 @@ class AI
         void normalAITurn();
         void impossibleAITurn();
 
+        // Moves for impossible difficulty AI to use
+        int impMoveWin();
+        int impMoveBlock();
+        int impMoveFork();
+        int impMoveBlockFork();
+        int impMoveCentral();
+        int impMoveOppCorner();
+        int impMoveCorner();
+        int impMoveSide();
+
         Grid *gridPtr;
 
         int difficulty = 0;
