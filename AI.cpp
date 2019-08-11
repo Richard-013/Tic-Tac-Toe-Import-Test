@@ -143,6 +143,24 @@ int AI::impMoveCentral()
 int AI::impMoveOppCorner()
 {
     // Takes a corner opposite to one the opponent has already taken
+    // Checks if a corner is taken, and if it is then the AI attempts to fill the opposite corner square (relies on short-circuit evaluation not to run the checkChoice function early)
+    if(gridPtr->viewSquare(8) == opponentSymbol && gridPtr->checkChoice(symbol, 0) == 0)
+    {
+        return 0;
+    }
+    else if(gridPtr->viewSquare(6) == opponentSymbol && gridPtr->checkChoice(symbol, 2) == 0)
+    {
+        return 0;
+    }
+    else if(gridPtr->viewSquare(2) == opponentSymbol && gridPtr->checkChoice(symbol, 6) == 0)
+    {
+        return 0;
+    }
+    else if(gridPtr->viewSquare(0) == opponentSymbol && gridPtr->checkChoice(symbol, 8) == 0)
+    {
+        return 0;
+    }
+
     return 1;
 }
 
