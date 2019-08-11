@@ -31,8 +31,6 @@ class AI
         // Moves for impossible difficulty AI to use
         int impMoveWin();
         int impMoveBlock();
-        int impMoveFork();
-        int impMoveBlockFork();
         int impMoveCentral();
         int impMoveOppCorner();
         int impMoveCorner();

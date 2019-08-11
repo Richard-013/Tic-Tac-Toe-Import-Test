@@ -503,18 +503,6 @@ int AI::impMoveBlock()
     return 1;
 }
 
-int AI::impMoveFork()
-{
-    // Creates a fork where there are two ways of winning
-    return 1;
-}
-
-int AI::impMoveBlockFork()
-{
-    // Blocks an opponents chance to make a fork
-    return 1;
-}
-
 int AI::impMoveCentral()
 {
     // Takes the central square if it available
