@@ -110,3 +110,13 @@ void Grid::resetGrid()
         grid[i] = blankGrid[i];
     }
 }
+
+char Grid::viewSquare(int position)
+{
+    if(position >= 0 && position <= 8)
+    {
+        return this->grid[position];
+    }
+
+    return 'F';
+}
