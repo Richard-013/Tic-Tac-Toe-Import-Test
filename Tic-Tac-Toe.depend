@@ -1,5 +1,82 @@
 # depslib dependency file v1.0
-1564960705 source:e:\richard\programming projects\c++\tic-tac-toe\main.cpp
+1565368561 source:e:\richard\programming projects\c++\tic-tac-toe\main.cpp
 	<iostream>
 	<string>
+	<stdlib.h>
+	<time.h>
+	"Game.h"
+	"Grid.h"
+	"Player.h"
+	"AI.h"
+
+1565352338 source:c:\users\richard\documents\github\tic-tac-toe\ai.cpp
+	"AI.h"
+
+1565358660 c:\users\richard\documents\github\tic-tac-toe\ai.h
+
+1565357767 source:c:\users\richard\documents\github\tic-tac-toe\game.cpp
+	"Game.h"
+
+1565358660 c:\users\richard\documents\github\tic-tac-toe\game.h
+	<string>
+	<iostream>
+	"Grid.h"
+	"Player.h"
+	"AI.h"
+
+1565358585 source:c:\users\richard\documents\github\tic-tac-toe\grid.cpp
+	"Grid.h"
+
+1565358637 c:\users\richard\documents\github\tic-tac-toe\grid.h
+	<iostream>
+
+1565356916 source:c:\users\richard\documents\github\tic-tac-toe\main.cpp
+	<iostream>
+	<string>
+	<stdlib.h>
+	<time.h>
+	"Game.h"
+	"Grid.h"
+	"Player.h"
+	"AI.h"
+
+1565357854 source:c:\users\richard\documents\github\tic-tac-toe\player.cpp
+	"Player.h"
+
+1565358660 c:\users\richard\documents\github\tic-tac-toe\player.h
+	<string>
+	<iostream>
+
+1565546187 source:e:\richard\programming projects\c++\tic-tac-toe\ai.cpp
+	"AI.h"
+
+1565568252 e:\richard\programming projects\c++\tic-tac-toe\ai.h
+	<iostream>
+	<stdlib.h>
+	<time.h>
+	"Grid.h"
+
+1565525295 source:e:\richard\programming projects\c++\tic-tac-toe\grid.cpp
+	"Grid.h"
+
+1565525193 e:\richard\programming projects\c++\tic-tac-toe\grid.h
+	<iostream>
+
+1565475906 e:\richard\programming projects\c++\tic-tac-toe\game.h
+	<string>
+	<iostream>
+	"Grid.h"
+	"Player.h"
+	"AI.h"
+
+1565476439 e:\richard\programming projects\c++\tic-tac-toe\player.h
+	<string>
+	<iostream>
+	"Grid.h"
+
+1565481586 source:e:\richard\programming projects\c++\tic-tac-toe\player.cpp
+	"Player.h"
+
+1565568032 source:e:\richard\programming projects\c++\tic-tac-toe\game.cpp
+	"Game.h"
 

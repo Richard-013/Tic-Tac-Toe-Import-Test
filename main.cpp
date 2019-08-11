@@ -3,6 +3,20 @@
 #include <stdlib.h>
 #include <time.h>
 
+#include "Game.h"
+#include "Grid.h"
+#include "Player.h"
+#include "AI.h"
+
+int main()
+{
+    Game gameObj;
+    gameObj.runGame();
+
+    return 0;
+}
+
+/*
 enum difficulty{Normal = 1, Impossible = 2};
 char grid[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
 
@@ -389,3 +403,4 @@ std::string gameIntro()
 
     return name;
 }
+*/
