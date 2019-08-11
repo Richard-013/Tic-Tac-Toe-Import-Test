@@ -42,6 +42,7 @@ class AI
 
         int difficulty = 0;
         char symbol = ' ';
+        char opponentSymbol = ' ';
 };
 
 #endif // AI_H

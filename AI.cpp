@@ -71,6 +71,8 @@ void AI::setSymbol(char playerSymbol)
     {
         symbol = 'O';
     }
+
+    opponentSymbol = playerSymbol;
 }
 
 void AI::setDifficulty()
