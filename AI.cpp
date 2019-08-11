@@ -105,49 +105,49 @@ void AI::setDifficulty()
     }
 }
 
-int impMoveWin()
+int AI::impMoveWin()
 {
     // Goes for a winning move if there is one available
     return 1;
 }
 
-int impMoveBlock()
+int AI::impMoveBlock()
 {
     // Blocks an opponents winning move
     return 1;
 }
 
-int impMoveFork()
+int AI::impMoveFork()
 {
     // Creates a fork where there are two ways of winning
     return 1;
 }
 
-int impMoveBlockFork()
+int AI::impMoveBlockFork()
 {
     // Blocks an opponents chance to make a fork
     return 1;
 }
 
-int impMoveCentral()
+int AI::impMoveCentral()
 {
     // Takes the central square if it available
     return 1;
 }
 
-int impMoveOppCorner()
+int AI::impMoveOppCorner()
 {
     // Takes a corner opposite to one the opponent has already taken
     return 1;
 }
 
-int impMoveCorner()
+int AI::impMoveCorner()
 {
     // Takes any available corner square
     return 1;
 }
 
-int impMoveSide()
+int AI::impMoveSide()
 {
     // Takes any available side square
     return 1;
