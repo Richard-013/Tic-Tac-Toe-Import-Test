@@ -10,6 +10,23 @@ void Game::runGame()
     // Starts the game and handles overall flow of events
     aiObj.setTargetGrid(gridPtr);
     playerObj.setTargetGrid(gridPtr);
+
+    aiObj.setSymbol('O');
+
+    gridObj.printGrid();
+    std::cout << std::endl;
+
+    gridObj.checkChoice('X', 4);
+    gridObj.checkChoice('X', 7);
+
+    gridObj.printGrid();
+    std::cout << std::endl;
+
+    aiObj.impossibleAITurn();
+
+    gridObj.printGrid();
+
+    /*
     gameIntro();
     do
     {
@@ -17,6 +34,7 @@ void Game::runGame()
     }while(playAgain());
 
     quitGame();
+    */
 }
 
 bool Game::checkWin(char symbol)

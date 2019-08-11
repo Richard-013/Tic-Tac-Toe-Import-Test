@@ -52,6 +52,7 @@ void AI::normalAITurn()
 void AI::impossibleAITurn()
 {
     // AI logic for impossible difficulty
+    impMoveWin();
 }
 
 char AI::getSymbol()
